@@ -9,11 +9,17 @@ from typing import Tuple
 import string
 
 
-def way(map_cities: Tuple[str], city1: str, city2: str) -> bool:
+def way(map_roads: Tuple[str], city1: str, city2: str) -> bool:
     """checking the map with cities"""
-    alp = string.ascii_uppercase
-    roads = ''
-    for road in map_cities:
-        roads += alp[alp.find(road[0]):alp.find(road[-1])]
-    new_road = alp[alp.find(city1[0]):alp.find(city2[-1])]
-    return set(new_road) <= set(roads)
+
+    alphabets = string.ascii_uppercase
+    str_roads = ''
+
+    for road in map_roads:
+        str_roads += alphabets[alphabets.find(road[0]):
+                               alphabets.find(road[-1])]
+
+    check_road = alphabets[alphabets.find(city1[0]):
+                           alphabets.find(city2[-1])]
+
+    return set(check_road) <= set(str_roads)

@@ -1,7 +1,14 @@
+"""
+docstring
+"""
 import ways
 
 
 def test_unlinked():
+    """
+
+    :return:
+    """
     assert ways.way(
         ("A-B", "C-D", "E-F"),
         "X", "Y"
@@ -9,6 +16,10 @@ def test_unlinked():
 
 
 def test_direct():
+    """
+
+    :return:
+    """
     assert ways.way(
         ("A-B", "C-D", "E-F"),
         "A", "B"
@@ -16,6 +27,10 @@ def test_direct():
 
 
 def test_linked():
+    """
+
+    :return:
+    """
     assert ways.way(
         ("A-B", "B-C", "C-D"),
         "A", "D"
@@ -23,6 +38,10 @@ def test_linked():
 
 
 def test_also_linked():
+    """
+
+    :return:
+    """
     assert ways.way(
         ("A-B", "C-D", "B-X", "C-W", "A-Q", "Q-R", "D-T"),
         "C", "T"
